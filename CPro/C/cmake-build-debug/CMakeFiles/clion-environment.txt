@@ -1,0 +1,4 @@
+ToolSet: 5.2 (local)@C:\MinGW
+Options: version=8.1
+
+Options:
