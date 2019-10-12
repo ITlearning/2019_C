@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/IoT-14/Desktop/CPor/C/AlgotithmHW6.c" "C:/Users/IoT-14/Desktop/CPor/C/cmake-build-debug/CMakeFiles/C.dir/AlgotithmHW6.c.obj"
+  "C:/Users/IoT-14/Desktop/IBY_C/CPro/C/AlgotithmHW6.c" "C:/Users/IoT-14/Desktop/IBY_C/CPro/C/cmake-build-debug/CMakeFiles/C.dir/AlgotithmHW6.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

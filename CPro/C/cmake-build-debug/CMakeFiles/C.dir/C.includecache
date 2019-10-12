@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/IoT-14/Desktop/IBY_C/CPro/C/AlgotithmHW6.c
+stdio.h
+-
+stdlib.h
+-
+time.h
+-
+
