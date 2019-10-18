@@ -1,0 +1,3 @@
+﻿  advanced_sort.c
+c:\users\user\desktop\c\2019_c\algorithm\sort_test\advanced_sort\advanced_sort.c(45): warning C4087: 'rand': 'void' 매개 변수 목록을 사용하여 선언되었습니다.
+  Advanced_Sort.vcxproj -> C:\Users\user\Desktop\C\2019_C\Algorithm\Sort_Test\Debug\Advanced_Sort.exe
