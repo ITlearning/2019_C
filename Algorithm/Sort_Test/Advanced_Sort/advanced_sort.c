@@ -39,37 +39,97 @@ void mergeSort(int A[], int p, int r) {
 	}
 }
 
+void swap(int A[], int a, int b) {
+	int tmp = A[a];
+	A[a] = A[b];
+	A[b] = tmp;
+
+}
+
 int partition(int A[], int p, int r) {
-	int pivot = A[(p + r) / 2];
-	int j = pivot + 1;
-	int tmp;
-	for (int i = p; i < r; i++) {
-		if (A[i] < pivot) {
-			tmp = 
+	int mid = (p + r) / 2;
+	swap(A, p, mid); //중간에 있는 수를 제일 왼쪽에 옮김
+
+	int pivot = A[p]; //옮긴 숫자를 피봇으로 설정
+	int i = p, j = r; //i, j 설정
+
+	while (i < j) {
+		while (A[j] > pivot) {
+			j--;
 		}
+		while (i < j && A[i] <= pivot) {
+			i++;
+		}
+		swap(A, i, j);
 	}
+	A[p] = A[i];
+	A[i] = pivot;
+	
 }
 
 void quickSort(int A[], int p, int r) {
-	if (p < r) {
-		int pivot = partition(A, p, r);
-
+	if (p >= r) {
+		return;
+	}
+	else {
+		int q = partition(A, p, r);
+		quickSort(A, p, q - 1);
+		quickSort(A, q + 1, r);
 	}
 }
 
 int main() {
-	int mergeInput[10];
+	int mergeInput[100000],quickInput[100000];
 	int num;
 	rand((unsigned int)time(NULL));
 	for (int i = 0; i < 10; i++) {
 		num = rand();
 		mergeInput[i] = num;
+		quickInput[i] = mergeInput[i];
 	}
-
 	mergeSort(mergeInput, 0, 9);
-
+	quickSort(quickInput, 0, 9);
+	printf("Merge Sort : ");
 	for (int i = 0; i < 10; i++) {
 		printf("%d ", mergeInput[i]);
+	}
+	printf("\n");
+	printf("Quick Sort : ");
+	for (int i = 0; i < 10; i++) {
+		printf("%d ", quickInput[i]);
+	}
+
+	printf("\n");
+
+	for (int i = 0; i < 100000; i++) {
+		num = rand();
+		mergeInput[i] = num;
+		quickInput[i] = num;
+	}
+
+	clock_t start1 = 0, end1 = 0;
+
+	for (int i = 0; i < 5; i++) {
+
+
+		clock_t start = clock();
+
+		mergeSort(mergeInput, 0, 99999);
+
+		clock_t end = clock();
+
+		double result = (double)(end - start);
+
+		clock_t s = clock();
+
+		quickSort(quickInput, 0, 99999);
+
+		clock_t e = clock();
+
+		printf("Merge Sort : %fsec ", result / CLOCKS_PER_SEC);
+		printf(" Quick Sort : %fsec \n", (double)(e - s) / CLOCKS_PER_SEC);
+
+
 	}
 	
 }
